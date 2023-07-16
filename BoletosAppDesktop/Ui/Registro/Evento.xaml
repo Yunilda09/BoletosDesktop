@@ -1,0 +1,52 @@
+﻿<Window x:Class="Evento"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BoletosAppDesktop"
+        mc:Ignorable="d"
+        Title="Registro de Evento" Height="450" Width="800">
+
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <!-- Campos-->
+
+            <StackPanel Orientation="Horizontal" Margin="10,0,0,5">
+                <Label Margin="0,18,0,0">Nombre Evento</Label>
+                <TextBox Text="{Binding nombreEvento}" Width="595" Margin="27,25,0,0"></TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="10,0,0,5">
+                <Label>Tipo Evento</Label>
+                <TextBox Text="{Binding descripcion}" Width="622" Margin="19,0,0,0"></TextBox>
+            </StackPanel>
+
+             <StackPanel Orientation="Horizontal" Margin="10,0,0,5" Width="777">
+                <Label Grid.Row="6" Margin="0,15,0,0" Height="36" Width="56" >Fecha</Label>
+                <DatePicker Text="{Binding Fecha}" Width="657" Height="28" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="10,0,0,5">
+                <Label>Ubicacion</Label>
+                <TextBox Text="{Binding ubicacion}" Width="640" Margin="12,0,0,0"></TextBox>
+            </StackPanel>
+
+          
+            <StackPanel Orientation="Horizontal" Grid.Row="7" Margin="10,0,0,5">
+                <Button x:Name="Registrar" Margin="78,0,0,0" Width="139" Click="Registrar_Click" >Registrar</Button>
+    
+            </StackPanel>
+
+            <!-- Lista de Eventos -->
+            <DataGrid x:Name="listEvento" ItemsSource="{Binding Evento}" AutoGenerateColumns="False" Margin="0,128,0,0" Grid.Row="2" Grid.ColumnSpan="2">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nombre del Evento" Binding="{Binding nombreEvento}"/>
+                    <DataGridTextColumn Header="Descripción" Binding="{Binding descripcion}"/>
+                    <DataGridTextColumn Header="Fecha" Binding="{Binding fecha}"/>
+                    <DataGridTextColumn Header="Ubicación" Binding="{Binding ubicacion}"/>
+                    </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+
+    </Grid>
+</Window>

@@ -1,0 +1,35 @@
+﻿<Window x:Class="Boleto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BoletosAppDesktop"
+        mc:Ignorable="d"
+        Title="Boleto" Height="750" Width="800">
+ 
+
+<Grid>
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="0,-2,0,2">
+
+             <Label Content="Nombre del Evento" Margin="-1,33,600,0" Width="185" />
+            <TextBlock x:Name="txtNombreEventoTB" Foreground="#FF171717"  Margin="0,0,600,0" Background="LightGray" />
+                <Label Content="Cantidad de Boletos" Width="780" />
+                <TextBox x:Name="txtCantidadBoletosTB" Foreground="LightGray" Margin="0,0,600,0" Width="170"/>
+
+            <Label Content="Tipo de Asiento" Margin="0,0,600,0" Width="170" />
+            <ComboBox x:Name="cmbTipoAsientoTB" Foreground="#FF131111" Margin="0,0,600,0" FontWeight="Bold" BorderBrush="#FFF1EBEB" Width="175">
+                <ComboBoxItem Content="VIP" />
+                <ComboBoxItem Content="Popular" />
+                <ComboBoxItem Content="General" />
+            </ComboBox>
+
+            <Label Content="Precio" Margin="0,0,600,0" Width="175" />
+            <TextBox x:Name="txtPrecioTB" Foreground="#FF121010" Margin="0,0,600,0" Background="LightGray" Width="175" />
+
+            <Button Content="Guardar" Click="GuardarDetalles_Click" Margin="325,94,295,196" Grid.Row="2" Grid.ColumnSpan="2" FontSize="16"/>
+        </StackPanel>
+    </Grid>
+
+</Grid>
+</Window>
