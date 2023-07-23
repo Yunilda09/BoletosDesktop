@@ -7,46 +7,75 @@
         mc:Ignorable="d"
         Title="Registro de Evento" Height="450" Width="800">
 
-    <Grid>
-        <StackPanel Orientation="Vertical">
-            <!-- Campos-->
 
-            <StackPanel Orientation="Horizontal" Margin="10,0,0,5">
-                <Label Margin="0,18,0,0">Nombre Evento</Label>
-                <TextBox Text="{Binding nombreEvento}" Width="595" Margin="27,25,0,0"></TextBox>
+    <Border CornerRadius="10"           
+             BorderThickness="0.5"
+             Opacity="0.90">
+
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#FFB1CFF1" Offset="0"/>
+                <GradientStop Color="#FFF7C6EA" Offset="0.75"/>
+                <GradientStop Color="#FFD49EED" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="#FFF175D3" Offset="0"/>
+                <GradientStop Color="#FF3B2C9A" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+
+
+        <Grid>
+            <StackPanel>
+
+                <!-- Campos-->
+                <Label Content="Nombre Evento" Margin="31,25,593,0" Width="147" FontFamily="Candara"/>
+                <TextBox x:Name="txtNombreEvento" Foreground="#FF171717"  Margin="174,-19,258,0" Background="White"/>
+
+                <Label Content=" Tipo Evento" Margin="31,15,600,0" Width="140" FontFamily="Candara"></Label>
+                <TextBox x:Name="txtDescripcion" Foreground="#FF171616" Margin="174,-20,258,0" FontFamily="Candara" BorderThickness="0,0,0,1" />
+
+                <Label x:Name="Fecha" Margin="32,15,600,0" Width="135" FontFamily="Candara"/>
+                <DatePicker x:Name="dpFecha" Foreground="#FF131111" Margin="174,-21,258,0">
+
+                    <DatePicker.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                            <GradientStop Color="#FFA3AEB9"/>
+                            <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                            <GradientStop Color="#FF718597" Offset="0.375"/>
+                            <GradientStop Color="#FFEBF1F5" Offset="1"/>
+                        </LinearGradientBrush>
+                    </DatePicker.BorderBrush>
+                </DatePicker>
+
+                <Label Content="Ubicación" Margin="39,15,600,0" Width="134" />
+                <TextBox x:Name="txtUbicacion" Foreground="#FF121010" Margin="174,-20,258,0" Background="White" BorderThickness="0,0,0,1"/>
+            
+                <Button Content="Registrar" Click="Resgistrar_Click" Margin="294,20,350,195" Grid.Row="2" Grid.ColumnSpan="2" FontSize="16" FontFamily="Candara" Width="154" Height="26"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="10,0,0,5">
-                <Label>Tipo Evento</Label>
-                <TextBox Text="{Binding descripcion}" Width="622" Margin="19,0,0,0"></TextBox>
-            </StackPanel>
+            <!-- Lista Eventos -->
 
-             <StackPanel Orientation="Horizontal" Margin="10,0,0,5" Width="777">
-                <Label Grid.Row="6" Margin="0,15,0,0" Height="36" Width="56" >Fecha</Label>
-                <DatePicker Text="{Binding Fecha}" Width="657" Height="28" />
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal" Margin="10,0,0,5">
-                <Label>Ubicacion</Label>
-                <TextBox Text="{Binding ubicacion}" Width="640" Margin="12,0,0,0"></TextBox>
-            </StackPanel>
-
-          
-            <StackPanel Orientation="Horizontal" Grid.Row="7" Margin="10,0,0,5">
-                <Button x:Name="Registrar" Margin="78,0,0,0" Width="139" Click="Registrar_Click" >Registrar</Button>
-    
-            </StackPanel>
-
-            <!-- Lista de Eventos -->
-            <DataGrid x:Name="listEvento" ItemsSource="{Binding Evento}" AutoGenerateColumns="False" Margin="0,128,0,0" Grid.Row="2" Grid.ColumnSpan="2">
+            <DataGrid x:Name="listEventos" ItemsSource="{Binding Event}" AutoGenerateColumns="False" Margin="0,234,5,2">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Nombre del Evento" Binding="{Binding nombreEvento}"/>
-                    <DataGridTextColumn Header="Descripción" Binding="{Binding descripcion}"/>
-                    <DataGridTextColumn Header="Fecha" Binding="{Binding fecha}"/>
-                    <DataGridTextColumn Header="Ubicación" Binding="{Binding ubicacion}"/>
-                    </DataGrid.Columns>
+                    <DataGridTextColumn Header=" Nombre del Evento" Binding="{Binding nombreEvento}" FontFamily="Candara"/>
+                    <DataGridTextColumn Header=" Tipo Evento" Binding="{Binding descripcion}" FontFamily="Candara"/>
+                    <DataGridTextColumn Header=" Fecha" Binding="{Binding fecha}" FontFamily="Candara"/>
+                    <DataGridTextColumn Header=" Ubicación" Binding="{Binding ubicacion}" FontFamily="Candara"/>
+                </DataGrid.Columns>
             </DataGrid>
-        </StackPanel>
+            <Image Source="/Image/Logo.jpeg"
+                           Width="115" Height="120" Margin="0,-246,-534,0"/>
+            <TextBlock Text=""
+                               Foreground="White"
+                               FontSize="18"
+                               FontWeight="Medium"
+                               FontFamily="Candara"
+                               HorizontalAlignment="Center" Margin="0,144,-531,0"/>
 
-    </Grid>
+        </Grid>
+    </Border>
 </Window>

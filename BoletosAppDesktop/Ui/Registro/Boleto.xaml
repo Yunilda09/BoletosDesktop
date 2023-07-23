@@ -6,30 +6,63 @@
         xmlns:local="clr-namespace:BoletosAppDesktop"
         mc:Ignorable="d"
         Title="Boleto" Height="750" Width="800">
- 
 
-<Grid>
-    <Grid>
-        <StackPanel Orientation="Vertical" Margin="0,-2,0,2">
+    <Border CornerRadius="10"  
+            BorderThickness="0.5"
+            Opacity="0.90">
 
-             <Label Content="Nombre del Evento" Margin="-1,33,600,0" Width="185" />
-            <TextBlock x:Name="txtNombreEventoTB" Foreground="#FF171717"  Margin="0,0,600,0" Background="LightGray" />
-                <Label Content="Cantidad de Boletos" Width="780" />
-                <TextBox x:Name="txtCantidadBoletosTB" Foreground="LightGray" Margin="0,0,600,0" Width="170"/>
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#FFB1CFF1" Offset="0"/>
+                <GradientStop Color="#FFF7C6EA" Offset="0.75"/>
+                <GradientStop Color="#FFD49EED" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
 
-            <Label Content="Tipo de Asiento" Margin="0,0,600,0" Width="170" />
-            <ComboBox x:Name="cmbTipoAsientoTB" Foreground="#FF131111" Margin="0,0,600,0" FontWeight="Bold" BorderBrush="#FFF1EBEB" Width="175">
-                <ComboBoxItem Content="VIP" />
-                <ComboBoxItem Content="Popular" />
-                <ComboBoxItem Content="General" />
-            </ComboBox>
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="#FFF7C6EB" Offset="0"/>
+                <GradientStop Color="#FF3B2C9A" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
 
-            <Label Content="Precio" Margin="0,0,600,0" Width="175" />
-            <TextBox x:Name="txtPrecioTB" Foreground="#FF121010" Margin="0,0,600,0" Background="LightGray" Width="175" />
 
-            <Button Content="Guardar" Click="GuardarDetalles_Click" Margin="325,94,295,196" Grid.Row="2" Grid.ColumnSpan="2" FontSize="16"/>
-        </StackPanel>
-    </Grid>
+        <Grid>
+            <StackPanel >
+                <Image Source="/Image/Logo.jpeg"
+                           Width="5" Height="0"/>
+                <TextBlock Text=""
+                               Foreground="White"
+                               FontSize="18"
+                               FontWeight="Medium"
+                               FontFamily="Candara"
+                               HorizontalAlignment="Center"/>
 
-</Grid>
+                <Label Content="Nombre del Evento" Margin="31,25,593,0" Width="147" FontFamily="Candara" />
+                <TextBlock x:Name="txtNombreEvento" Foreground="#FF171717"  Margin="174,-19,258,0" Background="White" />
+
+                <Label Content="Cantidad de Boletos" Margin="31,15,600,0" Width="140" FontFamily="Candara" />
+                <TextBox x:Name="txtCantidadBoletos" Foreground="#FF171616" Margin="174,-20,258,0" FontFamily="Candara" BorderThickness="0,0,0,1"/>
+
+                <Label Content="Tipo de Asiento" Margin="32,15,600,0" Width="135" FontFamily="Candara" />
+                <ComboBox x:Name="cmbTipoAsiento" Foreground="#FF131111" Margin="174,-21,258,0" FontWeight="Bold" BorderBrush="#FFF1EBEB">
+                    <ComboBox.Background>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#FFF0F0F0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </ComboBox.Background>
+                    <ComboBoxItem Content="VIP" />
+                    <ComboBoxItem Content="Popular" />
+                    <ComboBoxItem Content="General" />
+                </ComboBox>
+
+                <Label Content="Precio" Margin="39,15,600,0" Width="134" />
+                <TextBox x:Name="txtPrecio" Foreground="#FF121010" Margin="174,-20,258,0" Background="White" BorderThickness="0,0,0,1" />
+
+                <Button Content=" Guardar" Click="GuardarBoleto_Click" Margin="256,40,310,196" Grid.Row="2" Grid.ColumnSpan="2" FontSize="16" Width="156" HorizontalAlignment="Center" VerticalAlignment="Center" Height="26"/>
+
+            </StackPanel>
+        </Grid>
+    </Border>
 </Window>
