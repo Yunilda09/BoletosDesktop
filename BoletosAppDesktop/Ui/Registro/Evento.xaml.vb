@@ -42,7 +42,7 @@ Public Class Evento
 
         Dim ev As New Eventos()
         ev.nombreEvento = txtNombreEventoTB
-        ev.fecha = dpFechaTb.SelectedDate
+        ev.fecha = dpFecha.SelectedDate
         ev.descripcion = txtDescripcionTB
         ev.ubicacion = txtUbicacionTB
 

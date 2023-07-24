@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BoletosAppDesktop"
         mc:Ignorable="d"
-        Title="Registro de Evento" Height="450" Width="800">
+        Title="Registro de Evento" Height="550" Width="800">
 
 
     <Border CornerRadius="10"           
@@ -22,8 +22,8 @@
 
         <Border.Background>
             <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                <GradientStop Color="#FFF175D3" Offset="0"/>
-                <GradientStop Color="#FF3B2C9A" Offset="1"/>
+                <GradientStop Color="#FFF7C6EA" Offset="0"/>
+                <GradientStop Color="LightCyan" Offset="1"/>
             </LinearGradientBrush>
         </Border.Background>
 
@@ -38,7 +38,7 @@
                 <Label Content=" Tipo Evento" Margin="31,15,600,0" Width="140" FontFamily="Candara"></Label>
                 <TextBox x:Name="txtDescripcion" Foreground="#FF171616" Margin="174,-20,258,0" FontFamily="Candara" BorderThickness="0,0,0,1" />
 
-                <Label x:Name="Fecha" Margin="32,15,600,0" Width="135" FontFamily="Candara"/>
+                <Label x:Name="Fecha" Content="Fecha" Margin="32,15,600,0" Width="135" FontFamily="Candara"/>
                 <DatePicker x:Name="dpFecha" Foreground="#FF131111" Margin="174,-21,258,0">
 
                     <DatePicker.BorderBrush>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BoletosAppDesktop"
         mc:Ignorable="d"
-        Title="Boleto" Height="750" Width="800">
+        Title="Boleto" Height="500" Width="800">
 
     <Border CornerRadius="10"  
             BorderThickness="0.5"
@@ -21,8 +21,8 @@
 
         <Border.Background>
             <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                <GradientStop Color="#FFF7C6EB" Offset="0"/>
-                <GradientStop Color="#FF3B2C9A" Offset="1"/>
+                <GradientStop Color="#FFF7C6EA" Offset="0"/>
+                <GradientStop Color="LightCyan" Offset="1"/>
             </LinearGradientBrush>
         </Border.Background>
 
